@@ -1,13 +1,22 @@
 {
   "name": "B.B",
-  "version": "1.0",
+  "version": "0.1",
   "description": "Bug Bounty agent",
   "manifest_version": 2,
   "background" : {
-  	"scripts" : ["js/background/background.js"],
+  	"scripts" : [
+  		"js/jquery.min.js",
+  		"js/background/background.js"
+  	],
   	"persistent" : false
   },
   "browser_action": {
     "default_popup": "popup.html"
-  }
+  },
+  "icons" : {
+  	"16" : "logo.png"
+  },
+  "permissions":[
+  	"tabs"
+  ]
 }

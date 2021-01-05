@@ -39,7 +39,7 @@ body{
 } .parameter-input-data:focus{
 	background-color: #212121;
 	color: #ADADAD;
-} .add-parameter{
+} #add-parameter{
 	margin-left: 10px;
 	font-size: 15px;
 	font-weight: bold;
@@ -49,4 +49,12 @@ body{
 } .custom-control-label{
 	color: white;
 	margin-top: 7px;
+} .no-result{
+	text-align: center;
+	color: white;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	font-size: 20px;
+} .parameter-input-param{
+	width: 100px;
 }
