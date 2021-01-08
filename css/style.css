@@ -32,10 +32,13 @@ body{
 	width: 100px;
 	max-width: 100px;
 	word-break : break-all;
-} .parameter-input-data{
+} .parameter-input-data, .parameter-input-param{
 	background-color: #212121;
 	color: #ADADAD;
 	width: 250px;
+} .parameter-input-param:focus{
+	background-color: #212121;
+	color: #ADADAD;
 } .parameter-input-data:focus{
 	background-color: #212121;
 	color: #ADADAD;

@@ -30,7 +30,7 @@ function showData(data){
 	for(let i=0; i<Object.keys(data).length; i++){
 		let html = `<div class="row result-box">
 						<div class="parameter-name">
-							${Object.keys(data)[i]}
+							<input type="text" class="form-control parameter-input-param" value="${Object.keys(data)[i]}">
 						</div>
 						<div class="parameter-input">
 							<input type="text" class="form-control parameter-input-data" value="${data[Object.keys(data)[i]]}">
@@ -59,7 +59,7 @@ function createParameter(){
 	$("#add-parameter").remove()
 	let parameter = `<div class="row result-box">
 						<div class="parameter-name">
-							<input type="text" class="form-control parameter-input-data parameter-input-param">
+							<input type="text" class="form-control parameter-input-param">
 						</div>
 						<div class="parameter-input">
 							<input type="text" class="form-control parameter-input-data">
