@@ -1,4 +1,14 @@
 $(document).ready(() => {
+	main();
+})
+
+document.getElementsByClassName("menu")[0].addEventListener("click", function() {
+	$("#main").children().remove();
+	$(".send-data").css("visibility" , "visible");
+	main();
+})
+
+function main(){
 	chrome.tabs.query({active: true, currentWindow: true}, function(tabs){
 		let current_url = tabs[0].url;
 		let params = getUrlParams(current_url);
@@ -6,7 +16,7 @@ $(document).ready(() => {
 		showData(params)
 		
 	})
-})
+}
 
 
 /* URL query parsing function */
@@ -19,23 +29,14 @@ function getUrlParams(current_url) {
 /* Print result on popup.html */
 function showData(data){
 	if(Object.keys(data).length == 0){
-		let html = `<div class="no-result center">
-						No data :(
-					</div>`;
+		let html = noResultHTML();
 		$("#main").append(html);
 		$(".send-data-btn").attr("disabled", true);
 		return;
 	}
 
 	for(let i=0; i<Object.keys(data).length; i++){
-		let html = `<div class="row result-box">
-						<div class="parameter-name">
-							<input type="text" class="form-control parameter-input-param" value="${Object.keys(data)[i]}">
-						</div>
-						<div class="parameter-input">
-							<input type="text" class="form-control parameter-input-data" value="${data[Object.keys(data)[i]]}">
-						</div>
-					`;
+		let html = showDataHTML(Object.keys(data)[i], data[Object.keys(data)[i]]);
 
 		if(i+1 == Object.keys(data).length){
 			html += `<button type="button" class="btn btn-success" id="add-parameter">+</button> </div>`;
@@ -57,15 +58,7 @@ function addParameterClickListener(){
 /* Create parameter form */
 function createParameter(){
 	$("#add-parameter").remove()
-	let parameter = `<div class="row result-box">
-						<div class="parameter-name">
-							<input type="text" class="form-control parameter-input-param">
-						</div>
-						<div class="parameter-input">
-							<input type="text" class="form-control parameter-input-data">
-						</div>
-						<button type="button" class="btn btn-success" id="add-parameter">+</button>
-					</div>`
+	let parameter = createParameterHTML();
 	$("#main").append(parameter);
 
 	addParameterClickListener();

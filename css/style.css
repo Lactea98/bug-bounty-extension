@@ -19,7 +19,7 @@ body{
 	color: white;
 }
 
-
+/*******  sender menu *********/
 #main > .result-box{
 	margin-left: 15px;
 	margin-top: 20px;
@@ -61,3 +61,26 @@ body{
 } .parameter-input-param{
 	width: 100px;
 }
+/**********************/
+
+
+/*******  En / Decode menu *********/
+.convert-input > textarea, .convert-result > textarea {
+	margin-left: 26px;
+	margin-right: 26px;
+	height: 150px;
+
+	background-color: #212121;
+	color: #ADADAD;
+}
+.option{
+	margin-left: 60px;
+	margin-right: 60px;
+	margin-top: 10px;
+}
+.text{
+	margin-top: 15px;
+	color: white;
+}
+
+/***********************************/
